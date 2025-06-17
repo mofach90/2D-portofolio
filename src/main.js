@@ -1,4 +1,4 @@
-import { k } from "./kaboom.js";
+import { k } from "./kaboomCtx.js";
 
 k.loadSprite("spritesheet", "./spritesheet.png", {
   sliceX: 39,
@@ -13,3 +13,5 @@ k.loadSprite("spritesheet", "./spritesheet.png", {
   },
 });
 k.loadSprite("map", "./map.png");
+
+k.setBackground(k.Color.fromHex("#311047"));
