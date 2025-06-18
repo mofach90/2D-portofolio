@@ -1,3 +1,4 @@
+import { scaleFactor } from "./constant.js";
 import { k } from "./kaboomCtx.js";
 
 k.loadSprite("spritesheet", "./spritesheet.png", {
@@ -19,5 +20,5 @@ k.setBackground(k.Color.fromHex("#311047"));
 k.scene("main", async () => {
   const mapData = await (await fetch("./map.json")).json();
   const layers = mapData.layers;
-  const map = k.make([k.sprite("map"), k.pos(0)]);
+  const map = k.make([k.sprite("map"), k.pos(0)], k.scale(scaleFactor));
 });
