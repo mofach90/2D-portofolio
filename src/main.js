@@ -36,3 +36,4 @@ k.scene("main", async () => {
     "player",
   ]);
 });
+k.go("main");
