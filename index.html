@@ -16,8 +16,16 @@
     </style>
     <div id="app">
       <div id="ui">
-        <div class="note">Tap/Click around to move</div>
-        // On Progress
+        <p class="note">Tap/Click around to move</p>
+        <div id="textbox-container" style="display: none">
+          <div class="textbox">
+            <p id="dialogue" class="ui-text">
+              <div class="btn-container">
+                <button id="close" class="ui-close-btn">Close</button>
+              </div>
+            </p>
+          </div>
+        </div>      
       </div>
       <canvas id="game"> </canvas>
     </div>
