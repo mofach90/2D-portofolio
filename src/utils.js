@@ -19,6 +19,7 @@ export function displayDialogue(text, onDisplayEnd) {
     onDisplayEnd();
     dialogueUI.style.display = "none";
     dialogue.innerHTML = "";
+    clearInternal(intervalRef);
     
 
 
