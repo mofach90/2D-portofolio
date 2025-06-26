@@ -20,8 +20,7 @@ export function displayDialogue(text, onDisplayEnd) {
     dialogueUI.style.display = "none";
     dialogue.innerHTML = "";
     clearInternal(intervalRef);
-    
-
-
+    closeButton.removeEventListener("click", onCloseBtnClick);
   }
+  
 }
