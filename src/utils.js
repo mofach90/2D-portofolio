@@ -18,7 +18,9 @@ export function displayDialogue(text, onDisplayEnd) {
   function onCloseBtnClick() {
     onDisplayEnd();
     dialogueUI.style.display = "none";
+    dialogue.innerHTML = "";
     
+
 
   }
 }
