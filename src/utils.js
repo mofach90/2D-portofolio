@@ -22,5 +22,5 @@ export function displayDialogue(text, onDisplayEnd) {
     clearInternal(intervalRef);
     closeButton.removeEventListener("click", onCloseBtnClick);
   }
-  
+  closeButton.addEventListener("click", onCloseBtnClick);
 }
