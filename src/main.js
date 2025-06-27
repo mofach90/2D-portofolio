@@ -56,6 +56,10 @@ k.scene("main", async () => {
           });
         }
       }
+      continue;
+    }
+    if (layer.name === "spawnpoints") {
+      
     }
   }
 });
