@@ -21,7 +21,7 @@ k.setBackground(k.Color.fromHex("#311047"));
 k.scene("main", async () => {
   const mapData = await (await fetch("./map.json")).json();
   const layers = mapData.layers;
-  const map = k.add([k.sprite("map"), k.pos(0)], k.scale(scaleFactor));
+  const map = k.make([k.sprite("map"), k.pos(0)], k.scale(scaleFactor));
   const player = k.make([
     k.sprite("spritesheet", { anim: "idle-down" }),
     k.area(new k.Rect(k.vec2(0, 3), 10, 10)),
@@ -37,11 +37,12 @@ k.scene("main", async () => {
     "player",
   ]);
   for (const layer of layers) {
+
     if (layer.name === "boundaries") {
       for (const boundary of layer.objects) {
-        map.make([
+        map.add([
           k.area({
-            share: new k.Rect(k.vec2(0), boundary.width, boundary.height),
+            shape: new k.Rect(k.vec2(0), boundary.width, boundary.height),
           }),
           k.body({
             isStatic: true,
@@ -49,6 +50,7 @@ k.scene("main", async () => {
           k.pos(boundary.x, boundary.y),
           boundary.name,
         ]);
+
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             player.isInDialogue = true;
