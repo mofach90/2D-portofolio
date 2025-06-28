@@ -66,7 +66,6 @@ k.scene("main", async () => {
             (map.pos.y + entity.y) * scaleFactor
           );
           k.add(player);
-          continue;
         }
       }
     }
