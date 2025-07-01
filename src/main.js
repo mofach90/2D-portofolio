@@ -72,9 +72,7 @@ k.scene("main", async () => {
       }
     }
   }
-  k.onUpdate(() => {
-    k.camPos(player.pos.x, player.pos.y + 100)
-  })
+
 });
 
 k.go("main");
