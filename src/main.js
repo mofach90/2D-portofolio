@@ -1,6 +1,6 @@
-import { scaleFactor } from "./constant.js";
-import { k } from "./kaboomCtx.js";
-import { displayDialogue } from "./utils.js";
+import { dialogueData, scaleFactor } from "./constants";
+import { k } from "./kaboomCtx";
+import { displayDialogue, setCamScale } from "./utils";
 
 k.loadSprite("spritesheet", "./spritesheet.png", {
   sliceX: 39,
@@ -27,8 +27,9 @@ k.scene("main", async () => {
 
   const player = k.make([
     k.sprite("spritesheet", { anim: "idle-down" }),
-    k.area(new k.Rect(k.vec2(0, 3), 10, 10)),
-
+    k.area({
+      shape: new k.Rect(k.vec2(0, 3), 10, 10),
+    }),
     k.body(),
     k.anchor("center"),
     k.pos(),
@@ -48,9 +49,7 @@ k.scene("main", async () => {
           k.area({
             shape: new k.Rect(k.vec2(0), boundary.width, boundary.height),
           }),
-          k.body({
-            isStatic: true,
-          }),
+          k.body({ isStatic: true }),
           k.pos(boundary.x, boundary.y),
           boundary.name,
         ]);
@@ -58,7 +57,10 @@ k.scene("main", async () => {
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             player.isInDialogue = true;
-            displayDialogue("TODO", () => (player.isInDialogue = false));
+            displayDialogue(
+              dialogueData[boundary.name],
+              () => (player.isInDialogue = false)
+            );
           });
         }
       }
@@ -74,13 +76,20 @@ k.scene("main", async () => {
             (map.pos.y + entity.y) * scaleFactor
           );
           k.add(player);
+          continue;
         }
       }
     }
   }
 
+  setCamScale(k);
+
+  k.onResize(() => {
+    setCamScale(k);
+  });
+
   k.onUpdate(() => {
-    k.camPos(player.pos.x, player.pos.y + 100);
+    k.camPos(player.worldPos().x, player.worldPos().y - 100);
   });
 });
 
