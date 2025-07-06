@@ -1,6 +1,6 @@
 import { scaleFactor } from "./constant.js";
 import { k } from "./kaboomCtx.js";
-import { displayDialogue } from "./utils.js";
+import { displayDialogue, setCamScale } from "./utils.js";
 
 k.loadSprite("spritesheet", "./spritesheet.png", {
   sliceX: 39,
@@ -71,6 +71,7 @@ k.scene("main", async () => {
       }
     }
   }
+  setCamScale(k);
   k.onUpdate(() => {
     k.camPos(player.pos.x, player.pos.y + 100);
   });
