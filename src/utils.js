@@ -24,3 +24,7 @@ export function displayDialogue(text, onDisplayEnd) {
   }
   closeButton.addEventListener("click", onCloseBtnClick);
 }
+
+export function setCamScale(k) {
+  const resizeCam = k.width() / k.height();
+}
