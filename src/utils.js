@@ -27,4 +27,9 @@ export function displayDialogue(text, onDisplayEnd) {
 
 export function setCamScale(k) {
   const resizeCam = k.width() / k.height();
+  if ( resizeCam < 1) {
+    k.camScale(k.vec2(1));
+    return;
+  }
+  k.camScale(k.vec2(1.5))
 }
