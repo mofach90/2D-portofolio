@@ -82,21 +82,22 @@ k.scene("main", async () => {
     if (mouseBtn !== "left" || player.isInDialogue) return;
     const worldMousePos = k.toWorld(k.mousePos());
     player.moveTo(worldMousePos, player.speed);
+
+    const mouseAngle = player.pos.angle(worldMousePos);
+
+    const lowerBound = 50;
+    const upperBound = 125;
+
+    if (
+      mouseAngle > lowerBound &&
+      mouseAngle < upperBound &&
+      player.curAnim() !== "walk-up"
+    ) {
+      player.play("walk-up");
+      player.direction = "up";
+      return;
+    }
   });
-  const mouseAngle = player.pos.angle(worldMousePos);
-
-  const lowerBound = 50;
-  const upperBound = 125;
-
-  if (
-    mouseAngle > lowerBound &&
-    mouseAngle < upperBound &&
-    player.curAnim() !== "walk-up"
-  ) {
-    player.play("walk-up");
-    player.direction = "up";
-    return;
-  }
 });
 
 k.go("main");
