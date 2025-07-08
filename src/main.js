@@ -126,6 +126,7 @@ k.scene("main", async () => {
     if (player.direction === "down"){
       player.play("idle-down")
     }
+    player.play("idle-side")
   })
 });
 
