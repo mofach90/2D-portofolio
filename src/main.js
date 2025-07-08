@@ -120,14 +120,16 @@ k.scene("main", async () => {
     }
   });
   k.onMouseRelease(() => {
-    if (player.direction === "up"){
-      player.play("idle-up")
+    if (player.direction === "up") {
+      player.play("idle-up");
+      return;
     }
-    if (player.direction === "down"){
-      player.play("idle-down")
+    if (player.direction === "down") {
+      player.play("idle-down");
+      return;
     }
-    player.play("idle-side")
-  })
+    player.play("idle-side");
+  });
 });
 
 k.go("main");
