@@ -106,7 +106,7 @@ k.scene("main", async () => {
       player.direction = "down";
       return;
     }
-    if ( Math.abs(mouseAngle) < upperBound)
+    if ( Math.abs(mouseAngle) > upperBound)
     {
       if (player.curAnim() !== "walk-side") player.play("walk-side")
       player.direction = "right";
