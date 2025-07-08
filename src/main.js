@@ -106,10 +106,14 @@ k.scene("main", async () => {
       player.direction = "down";
       return;
     }
-    if ( Math.abs(mouseAngle) > upperBound)
-    {
-      if (player.curAnim() !== "walk-side") player.play("walk-side")
+    if (Math.abs(mouseAngle) > upperBound) {
+      if (player.curAnim() !== "walk-side") player.play("walk-side");
       player.direction = "right";
+      return;
+    }
+    if (Math.abs(mouseAngle) < lowerBound) {
+      if (player.curAnim() !== "walk-side") player.play("walk-side");
+      player.direction = "left";
       return;
     }
   });
