@@ -3,10 +3,10 @@ export function displayDialogue(text, onDisplayEnd) {
   const dialogue = document.getElementById("dialogue");
 
   dialogueUI.style.display = "block";
-  const index = 0;
-  const currentText = "";
+  let index = 0;
+  let currentText = "";
   const intervalRef = setInterval(() => {
-    if (index < text.lenght) {
+    if (index < text.length) {
       currentText += text[index];
       dialogue.innerHTML = currentText;
       index++;
@@ -19,7 +19,7 @@ export function displayDialogue(text, onDisplayEnd) {
     onDisplayEnd();
     dialogueUI.style.display = "none";
     dialogue.innerHTML = "";
-    clearInternal(intervalRef);
+    clearInterval(intervalRef);
     closeButton.removeEventListener("click", onCloseBtnClick);
   }
   closeButton.addEventListener("click", onCloseBtnClick);
