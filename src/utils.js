@@ -12,17 +12,27 @@ export function displayDialogue(text, onDisplayEnd) {
       index++;
       return;
     }
+
     clearInterval(intervalRef);
-  }, 5);
-  const closeButton = document.getElementById("close");
+  }, 1);
+
+  const closeBtn = document.getElementById("close");
+
   function onCloseBtnClick() {
     onDisplayEnd();
     dialogueUI.style.display = "none";
     dialogue.innerHTML = "";
     clearInterval(intervalRef);
-    closeButton.removeEventListener("click", onCloseBtnClick);
+    closeBtn.removeEventListener("click", onCloseBtnClick);
   }
-  closeButton.addEventListener("click", onCloseBtnClick);
+
+  closeBtn.addEventListener("click", onCloseBtnClick);
+
+  addEventListener("keypress", (key) => {
+    if (key.code === "Enter") {
+      closeBtn.click();
+    }
+  });
 }
 
 export function setCamScale(k) {

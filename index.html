@@ -11,11 +11,11 @@
       @font-face {
         font-family: monogram;
         src: url(monogram.ttf);
-        overflow: hidden;
       }
-      body{
+      body {
         font-family: monogram, monospace;
         font-size: 2rem;
+        overflow: hidden;
       }
       #app {
         width: 100%;
@@ -38,7 +38,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         word-spacing: 0.2rem;
-        filter: drop-shadow(0 0 0.75rem rgba(112, 112, 112));
+        filter: drop-shadow(0 0 0.75rem rgb(112, 112, 112));
       }
       .ui-text {
         margin: 0;
@@ -62,25 +62,24 @@
         left: 5%;
         display: flex;
         flex-direction: column;
-        color: rgb(238, 238, 238)
+        color: rgb(238, 238, 238);
       }
-
     </style>
     <div id="app">
-      <div id="ui">
+      <div>
         <p class="note">Tap/Click around to move</p>
+
         <div id="textbox-container" style="display: none">
-          <div class="textbox">
-            <p id="dialogue" class="ui-text">
-              <div class="btn-container">
-                <button id="close" class="ui-close-btn">Close</button>
-              </div>
-            </p>
+          <div id="textbox">
+            <p id="dialogue" class="ui-text"></p>
+            <div class="btn-container">
+              <button id="close" class="ui-close-btn">Close</button>
+            </div>
           </div>
-        </div>      
+        </div>
       </div>
-      <canvas id="game"> </canvas>
+      <canvas id="game"></canvas>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
