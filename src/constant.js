@@ -7,4 +7,10 @@ Check out my <a href="https://github.com/mofach90" target="_blank">GitHub</a>!`,
 "cs-degree": `This is my Computer Science degree. I keep it on display because it represents a solid foundation in theory and problem-solving that continues to support my work today.`,
 
 "sofa-table": `This is where I unwind and dive into YouTube or brainstorm new project ideas. I also create game programming tutorials—check out <a href="https://youtube.com/@jslegenddev" target="_blank">my channel</a> if you're into that kind of thing! You’ll even find a breakdown of how I built this interactive portfolio.`,
+tv: `That's my TV. Lately, I’ve been deep into watching tech YouTubers like 
+  <a href="https://www.youtube.com/@ThePrimeTimeagen" target="_blank">ThePrimeagen</a>, 
+  <a href="https://www.youtube.com/@t3dotgg" target="_blank">Theo (t3.gg)</a>, 
+  <a href="https://www.youtube.com/@PirateSoftware" target="_blank">PirateSoftware</a> (occasionally), and 
+  <a href="https://www.youtube.com/@MelkeyDev" target="_blank">Melkey</a>! 
+  Always inspiring and fun to watch.`,
 };
