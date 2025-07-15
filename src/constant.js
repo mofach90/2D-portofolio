@@ -13,4 +13,6 @@ tv: `That's my TV. Lately, I’ve been deep into watching tech YouTubers like
   <a href="https://www.youtube.com/@PirateSoftware" target="_blank">PirateSoftware</a> (occasionally), and 
   <a href="https://www.youtube.com/@MelkeyDev" target="_blank">Melkey</a>! 
   Always inspiring and fun to watch.`,
+bed: `This is where I sleep. Funny enough, some of my best ideas hit me when I'm lying here. 
+  If I don't jot them down right away, I can’t sleep — they keep spinning in my head, demanding attention.`
 };
